@@ -27,7 +27,7 @@ This is the [binary search tree (BST)](https://www.theodinproject.com/paths/full
 
 ## Thoughts
 
-Wasn't too bad! It's exciting getting into data structures, but implementation didn't take anything more than simple and straightforward interaction between objects.
+Pending...
 
 God bless.
 
