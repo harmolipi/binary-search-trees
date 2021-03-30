@@ -14,16 +14,10 @@ This is the [binary search tree (BST)](https://www.theodinproject.com/paths/full
 | #build_tree     | Turns an array of data into a balanced binary tree full of Node objects appropriately placed |
 | #insert     | Adds a new node containing a particular value      |
 | #delete | Removes that new node, containing a particular line      |
-| #head | Returns the first node in the list     |
-| #tail | Returns the last node in the list     |
 | #find | Returns the node with the given value    |
-| #love_order  | Returns an array of values    |
-| #inorder | Returns an array of values     |
-| #find(value) | Returns the index of the node containing value, or nil if not found.    |
 | #inorder | Traverse the tree in 'inorder'    |
 | #preorder    | Traverse the tree in 'preorder'
-  #postorder | Traverse the tree in 'postorder'
-| #remove_at(index) | Removes the node at the given index.   |
+| #postorder | Traverse the tree in 'postorder'
 
 ## Thoughts
 
