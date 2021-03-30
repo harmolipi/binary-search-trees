@@ -6,24 +6,22 @@ class Tree
   attr_reader :root
 
   def initialize(input_array)
-    @root = build_tree(input_array)
+    @root = build_tree(clean_array(input_array))
   end
 
-  def build_tree(input_array)
-    binding.pry
-    array_start = 0
-    array_end = input_array.length - 1
-    array_mid = (array_start + array_end) / 2
+  def clean_array(input_array)
+    input_array.sort.uniq
+  end
 
-    if !array_end.zero?
-      left_subarray = input_array[0...array_mid] # empty array from array of 2
-      right_subarray = input_array[array_mid + 1..array_end]
-      Node.new(input_array[array_mid], build_tree(left_subarray), build_tree(right_subarray))
-      # puts new_node.data
-    else
-      Node.new(input_array[array_mid])
-      # puts new_node.data
-    end
+  def build_tree(input_array, array_start = 0, array_end = input_array.length - 1)
+    return nil if array_start > array_end
+
+    array_mid = (array_start + array_end) / 2
+    root = Node.new(input_array[array_mid])
+
+    root.left = build_tree(input_array, array_start, array_mid - 1)
+    root.right = build_tree(input_array, array_mid + 1, array_end)
+    root
   end
 
   def pretty_print(node = @root, prefix = '', is_left = true)
