@@ -26,7 +26,7 @@ class Tree
     root
   end
 
-  def insert(data, node = @root)
+  def insert(data, node = root)
     if node.nil?
       Node.new(data)
     else
@@ -41,7 +41,7 @@ class Tree
     end
   end
 
-  def delete(data, node = @root)
+  def delete(data, node = root)
     # base case
     return nil if node.nil?
 
@@ -65,7 +65,7 @@ class Tree
     node
   end
 
-  def find(data, node = @root)
+  def find(data, node = root)
     return nil if node.nil?
 
     if data < node.data
@@ -83,7 +83,7 @@ class Tree
     current
   end
 
-  def level_order(node = @root)
+  def level_order(node = root)
     return nil if node.nil?
 
     level_order_array = []
@@ -99,7 +99,7 @@ class Tree
     level_order_array
   end
 
-  def inorder(node = @root)
+  def inorder(node = root)
     return nil if node.nil?
 
     inorder_array = []
@@ -109,8 +109,7 @@ class Tree
     inorder_array.flatten
   end
 
-  def preorder(node = @root)
-    # binding.pry
+  def preorder(node = root)
     return nil if node.nil?
 
     preorder_array = []
@@ -120,7 +119,7 @@ class Tree
     preorder_array.flatten
   end
 
-  def postorder(node = @root)
+  def postorder(node = root)
     return nil if node.nil?
 
     postorder_array = []
@@ -128,6 +127,20 @@ class Tree
     postorder_array << postorder(node.right) unless node.right.nil?
     postorder_array << node.data
     postorder_array.flatten
+  end
+
+  def height(node = root)
+    # binding.pry
+    # return 0 if (node.nil? || (node.left.nil? && node.right.nil?))
+    return -1 if node.nil?
+
+    height = 0
+
+    left_height = height(node.left)
+    right_height = height(node.right)
+    # height += (left_height > right_height ? left_height : right_height) 
+    height += [left_height, right_height].max
+    height + 1
   end
 
   def pretty_print(node = @root, prefix = '', is_left = true)
