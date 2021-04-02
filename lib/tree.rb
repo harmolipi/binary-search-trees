@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'node'
 require 'pry'
 
@@ -103,18 +105,18 @@ class Tree
     inorder_array = []
     inorder_array << inorder(node.left) unless node.left.nil?
     inorder_array << node.data
-    inorder_array << inorder(node.right) unless node.left.nil?
+    inorder_array << inorder(node.right) unless node.right.nil?
     inorder_array.flatten
   end
 
   def preorder(node = @root)
-    binding.pry
+    # binding.pry
     return nil if node.nil?
 
     preorder_array = []
     preorder_array << node.data
     preorder_array << preorder(node.left) unless node.left.nil?
-    preorder_array << preorder(node.right) unless node.left.nil?
+    preorder_array << preorder(node.right) unless node.right.nil?
     preorder_array.flatten
   end
 

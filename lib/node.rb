@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # class to create and manage nodes within the binary search tree
 class Node
   include Comparable
