@@ -9,3 +9,6 @@ new_tree.pretty_print
 new_tree.delete(10)
 new_tree.pretty_print
 p new_tree.level_order
+puts new_tree.find(100)
+p new_tree.preorder
+p new_tree.inorder

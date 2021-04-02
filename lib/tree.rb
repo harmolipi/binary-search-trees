@@ -83,6 +83,7 @@ class Tree
 
   def level_order(node = @root)
     return nil if node.nil?
+
     level_order_array = []
     queue = []
     current = node
@@ -94,6 +95,27 @@ class Tree
       queue << current.right unless current.right.nil?
     end
     level_order_array
+  end
+
+  def inorder(node = @root)
+    return nil if node.nil?
+
+    inorder_array = []
+    inorder_array << inorder(node.left) unless node.left.nil?
+    inorder_array << node.data
+    inorder_array << inorder(node.right) unless node.left.nil?
+    inorder_array.flatten
+  end
+
+  def preorder(node = @root)
+    binding.pry
+    return nil if node.nil?
+
+    preorder_array = []
+    preorder_array << node.data
+    preorder_array << preorder(node.left) unless node.left.nil?
+    preorder_array << preorder(node.right) unless node.left.nil?
+    preorder_array.flatten
   end
 
   def pretty_print(node = @root, prefix = '', is_left = true)
