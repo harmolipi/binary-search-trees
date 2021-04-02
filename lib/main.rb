@@ -23,4 +23,6 @@ new_tree.insert(170)
 new_tree.insert(160)
 new_tree.pretty_print
 p new_tree.balanced?
-p new_tree.inorder
+new_tree.rebalance
+new_tree.pretty_print
+p new_tree.balanced?

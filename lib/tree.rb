@@ -152,7 +152,11 @@ class Tree
 
   def balanced?(node = root)
     diff = height(node.left) - height(node.right)
-    diff > -1 && diff < 1
+    diff >= -1 && diff <= 1
+  end
+
+  def rebalance(node = root)
+    initialize(inorder(node))
   end
 
   def pretty_print(node = @root, prefix = '', is_left = true)
