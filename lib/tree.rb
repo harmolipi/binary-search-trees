@@ -130,15 +130,11 @@ class Tree
   end
 
   def height(node = root)
-    # binding.pry
-    # return 0 if (node.nil? || (node.left.nil? && node.right.nil?))
     return -1 if node.nil?
 
     height = 0
-
     left_height = height(node.left)
     right_height = height(node.right)
-    # height += (left_height > right_height ? left_height : right_height) 
     height += [left_height, right_height].max
     height + 1
   end
