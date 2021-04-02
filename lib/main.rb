@@ -15,4 +15,5 @@ puts new_tree.find(100)
 p new_tree.preorder
 p new_tree.inorder
 p new_tree.postorder
-p new_tree.height
+p new_tree.height(new_tree.find(12))
+p new_tree.depth(new_tree.find(100))
