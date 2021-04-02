@@ -17,3 +17,10 @@ p new_tree.inorder
 p new_tree.postorder
 p new_tree.height(new_tree.find(12))
 p new_tree.depth(new_tree.find(100))
+new_tree.insert(101)
+new_tree.insert(145)
+new_tree.insert(170)
+new_tree.insert(160)
+new_tree.pretty_print
+p new_tree.balanced?
+p new_tree.inorder
