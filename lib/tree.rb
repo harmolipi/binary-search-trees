@@ -120,6 +120,16 @@ class Tree
     preorder_array.flatten
   end
 
+  def postorder(node = @root)
+    return nil if node.nil?
+
+    postorder_array = []
+    postorder_array << postorder(node.left) unless node.left.nil?
+    postorder_array << postorder(node.right) unless node.right.nil?
+    postorder_array << node.data
+    postorder_array.flatten
+  end
+
   def pretty_print(node = @root, prefix = '', is_left = true)
     pretty_print(node.right, "#{prefix}#{is_left ? '│   ' : '    '}", false) if node.right
     puts "#{prefix}#{is_left ? '└── ' : '┌── '}#{node.data}"

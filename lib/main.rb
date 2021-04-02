@@ -14,3 +14,4 @@ p new_tree.level_order
 puts new_tree.find(100)
 p new_tree.preorder
 p new_tree.inorder
+p new_tree.postorder
