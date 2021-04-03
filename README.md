@@ -21,7 +21,7 @@ This is the [binary search tree (BST)](https://www.theodinproject.com/paths/full
 
 ## Thoughts
 
-Pending...
+This was a good one! By the end of it, I felt much better about recursion. It was also a good exercise in deciphering non-ruby programming languages, reading them like pseudocode, and expressing the logic in ruby. And binary search trees certainly made much more sense by the end of it.
 
 God bless.
 
