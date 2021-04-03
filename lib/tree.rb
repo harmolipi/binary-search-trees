@@ -37,7 +37,8 @@ class Tree
       else
         node.left = insert(data, node.left)
       end
-    node
+
+      node
     end
   end
 
@@ -52,11 +53,8 @@ class Tree
     else
 
       # node to delete has one child or no child
-      if node.left.nil?
-        return node.right
-      elsif node.right.nil?
-        return node.left
-      end
+      return node.right if node.left.nil?
+      return node.left if node.right.nil?
 
       # node to delete has two children
       node.data = find_min(node.right).data

@@ -2,27 +2,51 @@
 
 require_relative 'tree'
 
-new_tree = Tree.new([1, 2, 5, 4, 4, 100, 4, 3, 6, 7, 12, 1, 17, 8, 9, 10])
-new_tree.pretty_print
-new_tree.insert(29)
-new_tree.pretty_print
-new_tree.delete(1)
-new_tree.pretty_print
-new_tree.delete(10)
-new_tree.pretty_print
-p new_tree.level_order
-puts new_tree.find(100)
-p new_tree.preorder
-p new_tree.inorder
-p new_tree.postorder
-p new_tree.height(new_tree.find(12))
-p new_tree.depth(new_tree.find(100))
-new_tree.insert(101)
-new_tree.insert(145)
-new_tree.insert(170)
-new_tree.insert(160)
-new_tree.pretty_print
-p new_tree.balanced?
-new_tree.rebalance
-new_tree.pretty_print
-p new_tree.balanced?
+my_array = Array.new(15) { rand(1..100) }
+puts "\nArray: #{my_array}"
+my_bst = Tree.new(my_array)
+puts "\nBinary search tree:"
+my_bst.pretty_print
+puts ''
+puts my_bst.balanced? ? 'This tree is balanced!' : 'This tree is unbalanced!'
+puts ''
+puts '----------'
+
+puts "\nPrinting numbers:"
+puts "\nlevel order:  #{my_bst.level_order}"
+puts "preorder:     #{my_bst.preorder}"
+puts "postorder:    #{my_bst.postorder}"
+puts "inorder:      #{my_bst.inorder}"
+puts ''
+puts '----------'
+
+puts "\nAdding these numbers:"
+
+10.times do
+  n = rand(100..200)
+  puts "- #{n}"
+  my_bst.insert(n)
+end
+
+puts "\nNew tree:"
+my_bst.pretty_print
+puts ''
+puts my_bst.balanced? ? 'This tree is balanced!' : 'This tree is unbalanced!'
+puts ''
+puts '----------'
+
+puts "\nRebuilt tree:"
+my_bst.rebalance
+my_bst.pretty_print
+puts ''
+puts my_bst.balanced? ? 'This tree is balanced!' : 'This tree is unbalanced!'
+puts ''
+puts '----------'
+
+puts "\nPrinting numbers:"
+puts "\nlevel order:  #{my_bst.level_order}"
+puts "preorder:     #{my_bst.preorder}"
+puts "postorder:    #{my_bst.postorder}"
+puts "inorder:      #{my_bst.inorder}"
+puts ''
+puts '----------'
